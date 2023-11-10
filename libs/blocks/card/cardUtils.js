@@ -6,7 +6,9 @@ const DOUBLE_WIDE = 'DoubleWideCard';
 const HALF_HEIGHT = 'HalfHeightCard';
 
 export const addBackgroundImg = (picture, cardType, card) => {
-  const url = picture.querySelector('img').src;
+  const webpImg = picture.querySelector('source[type="image/webp"]');
+  const img = picture.querySelector('img');
+  const url = webpImg ? webpImg.srcset : img.src;
   card.append(createTag('div', { class: `consonant-${cardType}-img`, style: `background-image: url(${url})` }));
 };
 

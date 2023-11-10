@@ -155,7 +155,7 @@ const init = (el) => {
       merchCard.appendChild(footer);
     }
     if (image !== undefined) {
-      merchCard.setAttribute('image', image.querySelector('img').src);
+      merchCard.setAttribute('image', image.querySelector('source[type="image/webp"]').srcset);
       image.remove();
     }
     if (!icons || icons.length > 0) {
